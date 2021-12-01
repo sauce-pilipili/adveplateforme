@@ -1,0 +1,116 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil ADVE{% endblock %}
+
+{% block body %}
+    {{ include('_include/_mainNavigation.html.twig') }}
+
+    <section class="container-xsmall gap-40">
+        <h1>À propos de l'association</h1>
+        <p>L’association ADVE, Association Découverte Vacances Equilibre, déclarée le 10.01.1996 à la Sous-Préfecture de Bergerac, vous propose ses séjours en centres de vacances pour enfants et adolescents de 6 à 17 ans.</p>
+    </section>
+
+    <section class="main-sejour sejour-reverse container-large_right margin-top">
+        <div class="sejour-bloc-2">
+            <div class="row-1">
+                <h1>Notre histoire</h1>
+                <p>Elle résulte de la fusion de deux associations : l’une, organisatrice de séjours de vacances à vocation sportive, l’autre, organisatrice de classes de découvertes sur le Patrimoine.</p>
+                <p>Le projet associatif d’ADVE repose sur des valeurs qui sont déclinées dans tous nos projets pédagogiques de centres et de classes de découverte. Consultez notre projet éducatif.</p>
+            </div>
+        </div>
+        <svg width="972" height="981.881" viewBox="0 0 972 981.881" role="img" class="sejour-bloc-2_svg">
+            <title>TEST</title>
+            <defs>
+                <pattern id="pattern" width="1" height="1" viewBox="224.131 426.523 451.955 456.55">
+                    <image preserveAspectRatio="xMidYMid slice" width="972" height="1374.823" xlink:href="img/test.jpg"/>
+                </pattern>
+            </defs>
+            <path id="Soustraction_42" data-name="Soustraction 42" d="M256.657,1204.015v0h0l-.109-.312L33.581,556.156l.642-.221L960.5,236.995V961.663Z" transform="translate(-33.581 -236.995)" fill="url(#pattern)"/>
+        </svg>
+    </section>
+
+    <div class="container-large container-chiffres-adve">
+        <div class="container-card-large row-step">
+            <div class="col-1">
+                <h2>{{ nbSejour }}</h2>
+                <p>séjours</p>
+            </div>
+            <div class="col-2">
+                <h2>5</h2>
+                <p>pays</p>
+            </div>
+            <div class="col-3">
+                <h2>{{ nbActivite }}</h2>
+                <p>types d'activités</p>
+            </div>
+            <div class="col-4">
+                <h2>{{ nbCentre }}</h2>
+                <p>centres</p>
+            </div>
+        </div>
+    </div>
+
+    <section class="main-sejour container-large_left">
+        <svg width="972" height="981.881" viewBox="0 0 972 981.881" role="img" class="sejour-bloc-1">
+            <title>TEST</title>
+            <defs>
+                <pattern id="pattern" width="1" height="1" viewBox="224.131 426.523 451.955 456.55">
+                    <image preserveAspectRatio="xMidYMid slice" width="972" height="1374.823" xlink:href="img/test.jpg"/>
+                </pattern>
+            </defs>
+            <path name="test" id="Soustraction_19" data-name="Soustraction 19" d="M513.394,1044.818h0V320.148L1251.927,62.936l14.718.78,218.588,642.106.16.471-972,338.524Z" transform="translate(-513.394 -62.936)" fill="url(#pattern)"/>
+        </svg>
+        <div class="sejour-bloc-2">
+            <div class="row-1">
+                <h1>Notre spécifité associative</h1>
+                <p>Notre spécificité associative, essentielle dans notre concept, est l’absence de sous-traitance pour nos activités dominantes. En effet, ce choix pédagogique, à l’exception du canoë et de l’escalade, est dispensé par des animateurs diplômés (brevets d’états ou brevets fédéraux) salariés de l’association.</p>
+                <p>Nous affirmons que ce choix facilite la maîtrise pédagogique, la souplesse en termes d’organisation, la relation entre les pratiquants et le moniteur, la progression technique avec un enseignement ludique tout en veillant à la sécurité des enfants dans les meilleures conditions.</p>
+                <p>L’objectif consiste à valoriser les jeunes lors des activités dominantes en leur faisant constater les progrès réalisés à chaque séance.</p>
+                <p>Nous estimons que l’organisation de séjours pour des enfants exige un travail de préparation rigoureux et minutieux.</p>
+                <p>Cette organisation autour de centres conviviaux, par le jeu, les activités, les échanges, dans un espace harmonieux et tolérant, nous permet de :</p>
+                <p>– Renouer avec le milieu naturel et humain
+                    – D’affirmer ainsi leur droit aux vacances
+                    – Veiller à ce chaque enfant soit valorisé</p>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="container-diagonal-box margin">
+        <div class="diagonal-box container-large">
+            <div class="container-card-large row-step">
+                <div class="col-1">
+                    <h2>Nos engagements</h2>
+                    <p>ADVE adhère en totalité à la convention relative aux droits de l’enfant. De ce fait, nos engagements, mis en œuvre dans les projets d’animations, sont les suivants :
+                    <p>✓ Garantir la sécurité physique, morale et affective des enfants et jeunes accueillis</p>
+                    <p>✓ Ce devoir est aussi le premier droit auquel prétendent les familles des enfants</p>
+                    <p>✓ Respect du contenu des séjours proposés, diffusés sur brochures ou sur Internet, aussi bien en termes d’activités qu’elles soient dominantes ou annexes qu’en dimensions éducatives</p>
+                </div>
+                <div class="col-2">
+                    <p>L’enfant, l’adolescent est au cœur de notre fonctionnement, nous mobilisons la totalité de nos moyens financiers et humains disponibles aux services de nos adhérents</p>
+                    <p>Pour veiller au respect de ces engagements, nous préparons en amont, avec l’équipe d’encadrement, « du directeur au responsable de l’entretien » par des séminaires et des formations, l’ensemble des séjours et activités.</p>
+                    <p>A tous moments et à toutes périodes nous suivons le bien être des enfants, contrôlons le bon déroulement des séjours, le respect de l’application de notre cahier des charges remis à chaque directeur.</p>
+                    <p>Enfin, nous assurons une information réactive et transparente avant, pendant et après les séjours pour tous nos adhérents par des moyens rapides et dynamiques : messages directs, …</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-partenaires-bis container-large gap-80">
+        <h2>Nos partenaires de confiance</h2>
+        <div class="gap-40">
+            <img src="img/logo-partenaire.svg" alt="Partenaire n°1">
+            <img src="img/logo-partenaire.svg" alt="Partenaire n°1">
+            <img src="img/logo-partenaire.svg" alt="Partenaire n°1">
+            <img src="img/logo-partenaire.svg" alt="Partenaire n°1">
+            <img src="img/logo-partenaire.svg" alt="Partenaire n°1">
+            <img src="img/logo-partenaire.svg" alt="Partenaire n°1">
+        </div>
+
+    </section>
+
+
+    <div class="separator"></div>
+    {{ include('_include/_mainFooter.html.twig') }}
+
+{% endblock %}

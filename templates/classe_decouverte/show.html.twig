@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ClasseDecouverte{% endblock %}
+
+{% block body %}
+    <h1>ClasseDecouverte</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ classe_decouverte.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ classe_decouverte.titre }}</td>
+            </tr>
+            <tr>
+                <th>Slug</th>
+                <td>{{ classe_decouverte.slug }}</td>
+            </tr>
+            <tr>
+                <th>MetaDescription</th>
+                <td>{{ classe_decouverte.metaDescription }}</td>
+            </tr>
+            <tr>
+                <th>Introduction</th>
+                <td>{{ classe_decouverte.introduction }}</td>
+            </tr>
+            <tr>
+                <th>Presentation</th>
+                <td>{{ classe_decouverte.presentation }}</td>
+            </tr>
+            <tr>
+                <th>Encadrement</th>
+                <td>{{ classe_decouverte.encadrement }}</td>
+            </tr>
+            <tr>
+                <th>Hebergement</th>
+                <td>{{ classe_decouverte.hebergement }}</td>
+            </tr>
+            <tr>
+                <th>Decouverte</th>
+                <td>{{ classe_decouverte.decouverte }}</td>
+            </tr>
+            <tr>
+                <th>Animation</th>
+                <td>{{ classe_decouverte.animation }}</td>
+            </tr>
+            <tr>
+                <th>PhotoEnAvant</th>
+                <td>{{ classe_decouverte.photoEnAvant }}</td>
+            </tr>
+            <tr>
+                <th>LegendePhotoEnAvant</th>
+                <td>{{ classe_decouverte.legendePhotoEnAvant }}</td>
+            </tr>
+            <tr>
+                <th>PhotoClasse</th>
+                <td>{{ classe_decouverte.photoClasse }}</td>
+            </tr>
+            <tr>
+                <th>LegendePhotoClasse</th>
+                <td>{{ classe_decouverte.legendePhotoClasse }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('classe_decouverte_index') }}">back to list</a>
+
+    <a href="{{ path('classe_decouverte_edit', {'id': classe_decouverte.id}) }}">edit</a>
+
+    {{ include('classe_decouverte/_delete_form.html.twig') }}
+{% endblock %}

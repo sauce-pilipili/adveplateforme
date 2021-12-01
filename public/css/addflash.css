@@ -1,0 +1,7 @@
+.greenalert{
+    color: #158425;
+}
+.redalert{
+    display: flex;
+    color: #cd0b0b;
+}

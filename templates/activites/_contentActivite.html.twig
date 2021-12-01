@@ -1,0 +1,12 @@
+{% for activite in activites %}
+    <tr>
+        <td><a style="cursor:pointer " href="{{ path('activites_edit', {'id': activite.id}) }}">{{ activite.name }}</a></td>
+        <td>
+            {{ include('activites/_delete_form.html.twig') }}
+        </td>
+    </tr>
+{% else %}
+    <tr>
+        <td colspan="17">Aucun résultat</td>
+    </tr>
+{% endfor %}

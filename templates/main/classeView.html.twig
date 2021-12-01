@@ -1,0 +1,128 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil ADVE{% endblock %}
+
+{% block body %}
+    {{ include('_include/_mainNavigation.html.twig') }}
+
+    <section class="main-sejour container-large_left">
+        <svg width="972" height="981.881" viewBox="0 0 972 981.881" role="img" class="sejour-bloc-1">
+            <title>{{ classe.legendePhotoEnAvant }}</title>
+            <defs>
+                <pattern id="pattern" width="1" height="1" viewBox="224.131 426.523 451.955 456.55">
+                    <image preserveAspectRatio="xMidYMid slice" width="972" height="1374.823" xlink:href="{{ asset('uploads/'~classe.photoEnAvant) }}"/>
+                </pattern>
+            </defs>
+            <path id="Soustraction_19" data-name="Soustraction 19" d="M513.394,1044.818h0V320.148L1251.927,62.936l14.718.78,218.588,642.106.16.471-972,338.524Z" transform="translate(-513.394 -62.936)" fill="url(#pattern)"/>
+        </svg>
+        <div class="sejour-bloc-2">
+            <div class="row-1">
+                <h1>{{ classe.titre }}</h1>
+                <div class="contain-items">
+                    <div class="item">
+                        <p>Thématique</p>
+                        <p>{{ classe.categorie.name }}</p>
+                    </div>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet</p>
+            </div>
+            <div class="row-2">
+                <a class="button-primary" href="{{ path('main_contact',{classe:'classe',id: classe.id}) }}">Contactez-nous</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="main-sejour container-large_right">
+        <div class="sejour-bloc-2">
+            <div class="row-1">
+                <h1>Présentation de la classe</h1>
+                <p>{{ classe.presentation|raw }}</p>
+            </div>
+        </div>
+        <svg width="972" height="981.881" viewBox="0 0 972 981.881" role="img" class="sejour-bloc-2_svg">
+            <title>{{ classe.legendePhotoClasse }}</title>
+            <defs>
+                <pattern id="pattern" width="1" height="1" viewBox="224.131 426.523 451.955 456.55">
+                    <image preserveAspectRatio="xMidYMid slice" width="972" height="1374.823" xlink:href="{{ asset('uploads/'~classe.photoClasse) }}"/>
+                </pattern>
+            </defs>
+            <path id="Soustraction_42" data-name="Soustraction 42" d="M256.657,1204.015v0h0l-.109-.312L33.581,556.156l.642-.221L960.5,236.995V961.663Z" transform="translate(-33.581 -236.995)" fill="url(#pattern)"/>
+        </svg>
+    </section>
+
+    <section class="container-diagonal-box margin">
+        <div class="diagonal-box-margin container-large">
+            <div class="container-card-large">
+                <div class="col-1">
+                    <h2>Encadrement</h2>
+                    <p>{{ classe.encadrement|raw }}
+                    </p>
+                </div>
+                <div class="col-2">
+                    <h2>Hébérgement</h2>
+                    <p>{{ classe.hebergement|raw }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-large gap-80">
+        <h2>Le programme</h2>
+        <div class="container">
+            <div class="col-1 card padding-60 gap-40">
+                <h3>Activités animations</h3>
+                <p>{{ classe.animation|raw }}
+                </p>
+            </div>
+            <div class="col-2 card padding-60 gap-40">
+                <h3>Activités découvertes</h3>
+                <p>{{ classe.decouverte|raw }}
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-diagonal-box margin">
+        <div class="diagonal-box container-large">
+            <div class="container-reservation">
+                <h2>Cette classe vous intéresse ?</h2>
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua</p>
+                <a class="button-primary" href="{{ path('main_contact',{classe:'classe',id: classe.id}) }}">Contactez-nous</a>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="container-check container-large">
+        <div class="bloc-check">
+            <img src="{{ asset('img/check.svg') }}" alt="Séjours vérifiés">
+            <div>
+                <h3>Séjours vérifiés</h3>
+                <p>Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit,</p>
+            </div>
+        </div>
+        <div class="bloc-check">
+            <img src="{{ asset('img/pay.svg') }}" alt="Paiement sécurisé">
+            <div>
+                <h3>Paiement sécurisé</h3>
+                <p>Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit,</p>
+            </div>
+        </div>
+        <div class="bloc-check">
+            <img src="{{ asset('img/stop.svg') }}" alt="Annulation">
+            <div>
+                <h3>Annulation</h3>
+                <p>Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit,</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="separator"></div>
+
+    {{ include('_include/_mainFooter.html.twig') }}
+
+{% endblock %}

@@ -1,0 +1,92 @@
+{{ form_start(form) }}
+{#<p>Ajouter une catégorie</p>#}
+{#{{ form_row(form.categorie) }}#}
+<p>Ajouter un nom</p>
+<span>Maximum 80 caractères</span>
+{{ form_row(form.name) }}
+<p>Ajouter une meta description</p>
+{{ form_row(form.metaDescription) }}
+<p>Ajouter une localisation</p>
+{{ form_row(form.localisation) }}
+<p>Ajouter la tranche d'age du centre</p>
+
+<div class="honoraire-bloc">
+    <div class="honoraire-bloc-input">
+        {{ form_row(form.ageMin) }}
+    </div>
+    <div class="honoraire-bloc-input">
+    {{ form_row(form.ageMax) }}
+    </div>
+</div>
+
+<p>Ajouter une description du centre</p>
+{{ form_row(form.description) }}
+<p>Ajouter une photo de mise en avant</p>
+<div class="upload-1">
+    {{ form_row(form.photoEnAvant,{'attr': {'class': 'article_photoEnAvant', 'onchange':"handleFilesAvant(files)",'id' : 'upload', 'multiple name': 'file'}}) }}
+    <div class="preview-image"><label for="upload"><span id="previewAvant">{% if centre.photoEnAvant != null %}
+        {% if app.request.attributes.get('_route') == 'centres_edit' %}
+                    <img class="image-preview" src="{{ asset('/uploads/'~centre.photoEnAvant) }}" alt="">
+                {% endif %}
+    {% endif %}</span></label></div>
+    <span id="file-select-button-1" class="browse button black">Ajouter une photo <i class="fa fa-plus"></i></span>
+</div>
+<p>legende de la photo de mise en avant</p>
+{{ form_row(form.legendePhotoEnAvant) }}
+
+
+<p>Ajouter une description du cadre de vie du centre</p>
+{{ form_row(form.cadreDeVie) }}
+<p>Ajouter une photo pour le cadre de vie</p>
+<div class="upload-2">
+    {{ form_row(form.photoCadre,{'attr': {'class': 'article_photoEnAvant', 'onchange':"handleFilesFond(files)",'id' : 'upload', 'multiple name': 'file'}}) }}
+    <div class="preview-image"><label for="upload"><span id="previewFond">{% if centre.photoCadre != null %}
+        {% if app.request.attributes.get('_route') == 'centres_edit' %}
+                    <img class="image-preview" src="{{ asset('/uploads/'~centre.photoCadre) }}" alt="">
+                {% endif %}
+    {% endif %}</span></label></div>
+    <span id="file-select-button-2" class="browse button black">Ajouter une photo <i class="fa fa-plus"></i></span>
+</div>
+<p>legende de la photo du cadre de vie</p>
+{{ form_row(form.legendePhotoCadre) }}
+
+
+
+<p>Ajouter une description de l'encadrement du centre</p>
+{{ form_row(form.Encadrement) }}
+<p>Ajouter une photo pour l'encadrement</p>
+<div class="upload-3">
+    {{ form_row(form.photoEncadrement,{'attr': {'class': 'article_photoEnAvant', 'onchange':"handleFilesGalerie(files)",'id' : 'upload', 'multiple name': 'file'}}) }}
+    <div class="preview-image"><label for="upload"><span id="previewGalerie">{% if centre.photoEncadrement != null %}
+        {% if app.request.attributes.get('_route') == 'centres_edit' %}
+                    <img class="image-preview" src="{{ asset('/uploads/'~centre.photoEncadrement) }}" alt="">
+                {% endif %}
+    {% endif %}</span></label></div>
+    <span id="file-select-button-3" class="browse button black">Ajouter une photo <i class="fa fa-plus"></i></span>
+</div>
+<p>legende de la photo de l'encadrement</p>
+{{ form_row(form.legendePhotoEncadrement) }}
+
+
+
+<p>Ajouter une description des plus du centre</p>
+{{ form_row(form.centrePlus) }}
+
+   <div class="bouton-box">
+    <button class="bouton-1" style="border: none">{{ button_label|default('Enregistrer') }}</button>
+</div>
+{{ form_end(form) }}
+<script>
+    $('#file-select-button-1').click(function () {
+        $('.upload-1 input').click();
+    });
+    $('#file-select-button-2').click(function () {
+        $('.upload-2 input').click();
+    });
+    $('#file-select-button-3').click(function () {
+        $('.upload-3 input').click();
+    });
+
+
+
+</script>

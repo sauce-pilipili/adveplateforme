@@ -1,0 +1,165 @@
+<header>
+    <div class="header-bg_blue"></div>
+    <div class="header-bg_transparent"></div>
+    <div class="header-container container-large">
+        <div id="logo">
+            <a href="{{ path('main') }}">
+                <img src="{{ asset('img/logo-adve.png') }}" alt="Logo de l'ADVE">
+            </a>
+        </div>
+        <nav class="navigation">
+            <div class="secondary-menu">
+                <ul>
+                    <li class="dropdown">
+                        <div class="dropbtn">
+                            <p>L'association</p>
+                            <img src="{{ asset('img/chevron-down.svg') }}" alt="">
+                        </div>
+                        <div class="dropdown-content">
+                            <a href="{{ path('main_about') }}">Qui sommes-nous ?</a>
+                            <a href="{{ path('main_plus') }}">Les plus de l'ADVE</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="{{ path('main_info') }}">Infos pratiques</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('main_ce') }}">CE</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('main_recrutement') }}">Recrutement</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="first-menu">
+                <ul>
+                    <li>
+                        <a href="{{path('main') }}">Accueil</a>
+                    </li>
+                    <li class="dropdown">
+                        <div class="dropbtn">
+                            <p class="bold">Nos centres</p>
+                            <img src="{{ asset('img/chevron-down.svg') }}" alt="">
+                        </div>
+                        <div class="dropdown-content" id="categorieCentre">
+
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <div class="dropbtn">
+                            <p class="bold">Nos activités</p>
+                            <img src="{{ asset('img/chevron-down.svg') }}" alt="">
+                        </div>
+                        <div class="dropdown-content" id="activite">
+                        </div>
+                    </li>
+                    <li>
+                        <a href="{{ path('main_vacances') }}">Nos séjours</a>
+                    </li>
+                    <li class="dropdown">
+                        <div class="dropbtn">
+                            <p class="bold">Les classes découvertes</p>
+                            <img src="{{ asset('img/chevron-down.svg') }}" alt="">
+                        </div>
+                        <div class="dropdown-content" id="classesDecouverte">
+
+                        </div>
+                    </li>
+                    <li>
+                        <a href="{{ path('main_actu') }}">Les actualités</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('main_contact') }}">Contactez-nous</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="menu-burger">
+            <input type="checkbox" id="checkbox-2"/>
+            <label for="checkbox-2">
+                <span class="barre-classique-1"></span>
+                <span class="barre-classique-2"></span>
+                <span class="barre-classique-3"></span>
+            </label>
+            <nav class="menu">
+                <input type="checkbox" id="checkbox-2"/>
+                <label for="checkbox-2">
+                    <span id="logo-burger">
+                        <a href="{{ path('main') }}">
+                            <img src="{{ asset('img/logo-adve.png') }}" alt="Logo de l'ADVE">
+                        </a>
+                    </span>
+                    <span class="menu-burger-open">
+                        <span class="barre-1"></span>
+                        <span class="barre-2"></span>
+                        <span class="barre-3"></span>
+                    </span>
+                </label>
+                <div class="item-menu-burger">
+                    <ul class="item-col1">
+                        <li>
+                            <a href="{{ path('main') }}">Accueil</a>
+                        </li>
+                        <li class="dropdown">
+                            <div class="dropbtn">
+                                <p class="bold">Nos centres</p>
+                                <img src="{{ asset('img/chevron-down.svg') }}" alt="">
+                            </div>
+                            <div class="dropdown-content" id="categorieCentre">
+
+                            </div>
+                        </li>
+                        <li class="dropdown">
+                            <div class="dropbtn">
+                                <p class="bold">Nos activités</p>
+                                <img src="{{ asset('img/chevron-down.svg') }}" alt="">
+                            </div>
+                            <div class="dropdown-content" id="activite">
+
+                            </div>
+                        </li>
+                        <li>
+                            <a href="{{ path('main_vacances') }}">Nos séjours</a>
+                        </li>
+                        <li class="dropdown">
+                            <div class="dropbtn">
+                                <p class="bold">Les classes découvertes</p>
+                                <img src="{{ asset('img/chevron-down.svg') }}" alt="">
+                            </div>
+                            <div class="dropdown-content" id="classesDecouverte">
+
+                            </div>
+                        </li>
+                        <li>
+                            <a href="{{ path('main_actu') }}">Les actualités</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('main_contact') }}">Contactez-nous</a>
+                        </li>
+                        <li class="dropdown">
+                            <div class="dropbtn">
+                                <p>L'association</p>
+                                <img src="{{ asset('img/chevron-down.svg') }}" alt="">
+                            </div>
+                            <div class="dropdown-content">
+                                <a href="{{ path('main_about') }}">Qui sommes-nous ?</a>
+                                <a href="{{ path('main_plus') }}">Les plus de l'ADVE</a>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="{{ path('main_info') }}">Infos pratiques</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('main_ce') }}">CE</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('main_recrutement') }}">Recrutement</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <script src="{{ asset('js/AJaxNavForm.js')}}"></script>
+</header>

@@ -1,0 +1,82 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil ADVE{% endblock %}
+
+{% block body %}
+    {{ include('_include/_mainNavigation.html.twig') }}
+    <section class="container-large margin-classic gap-40">
+        <h1>Les classes découvertes</h1>
+        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+            dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+            clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+            consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+            sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no
+            sea takimata sanctus est Lorem ipsum dolor sit amet</p>
+        <p><span><a href="{{ path('main_classes',{categorie: 'Tous'}) }}">Tous</a></span>
+            {% for cat in categories %}
+                <span><a href="{{ path('main_classes',{categorie: cat.name}) }}">{{ cat.name }}</a></span>
+            {% endfor %}
+        </p>
+    </section>
+
+
+    <section class="container-large">
+
+        <div class="container-card">
+            {% for classe in classes %}
+                <a href="{{ path('main_classe',{slug: classe.slug}) }}"></a>
+                <div class="card">
+                    <img src="{{ asset('uploads/'~classe.photoEnAvant) }}" alt="Photo de la classe">
+                    <div class="card-text">
+                        <div class="card-bloc-title">
+                            <h3>Classe découverte</h3>
+                            <p>{{ classe.titre }}</p>
+                        </div>
+                        <div>
+                            <div class="card-bloc-item">
+                                <p>Thématique</p>
+                                <p>{{ classe.categorie.name }}</p>
+                            </div>
+                        </div>
+                        <p>{{ classe.introduction|slice(0,200) |striptags|raw }}...</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="button-center">
+            <a class="button-primary" href="{{ path('main_classes',{categorie:'Tous'}) }}">Voir toutes les classes</a>
+        </div>
+    </section>
+
+
+
+
+    <section class="container-check container-large">
+        <div class="bloc-check">
+            <img src="{{ asset('img/check.svg') }}" alt="Séjours vérifiés">
+            <div>
+                <h3>Séjours vérifiés</h3>
+                <p>Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit,</p>
+            </div>
+        </div>
+        <div class="bloc-check">
+            <img src="{{ asset('img/pay.svg') }}" alt="Paiement sécurisé">
+            <div>
+                <h3>Paiement sécurisé</h3>
+                <p>Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit,</p>
+            </div>
+        </div>
+        <div class="bloc-check">
+            <img src="{{ asset('img/stop.svg') }}" alt="Annulation">
+            <div>
+                <h3>Annulation</h3>
+                <p>Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit,</p>
+            </div>
+        </div>
+    </section>
+    <div class="separator"></div>
+    {{ include('_include/_mainFooter.html.twig') }}
+{% endblock %}

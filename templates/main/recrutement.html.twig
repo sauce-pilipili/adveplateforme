@@ -1,0 +1,138 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil ADVE{% endblock %}
+
+{% block body %}
+    {{ include('_include/_mainNavigation.html.twig') }}
+    <section class="container-xsmall gap-40">
+        <h1>Recrutement</h1>
+        <p>Notre association emploie 250 salariés saisonniers, tout au long de l’année, principalement entre septembre et mars, pendant les vacances de Printemps, d’Eté et d’automne. Vous souhaitez rejoindre nos équipes ?</p>
+    </section>
+
+
+
+    <section class="container-diagonal-box margin z-index">
+        <div class="diagonal-box container-large container-step">
+            <div class="container-card-large bloc-step">
+                <h2>La procédure</h2>
+                <div class="row-step">
+                    <div class="col-1">
+                        <h3>Étape 1</h3>
+                        <p>Sélection des CV</p>
+                    </div>
+                    <div class="col-2">
+                        <h3>Étape 2</h3>
+                        <p>Entretien téléphonique</p>
+                    </div>
+                    <div class="col-2">
+                        <h3>Étape 3</h3>
+                        <p>Entretien de groupe (simulation) et individuel</p>
+                    </div>
+                    <div class="col-2">
+                        <h3>Étape 4</h3>
+                        <p>Réponse</p>
+                    </div>
+                    <div class="col-2">
+                        <h3>Étape 5</h3>
+                        <p>Signature du contrat de travail</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-large">
+        <div class="container margin">
+            <div class="col-1 card padding-60 gap-40">
+                <h3>Informations</h3>
+                <p>Les animateurs ayant déjà travaillé pour ADVE sont prioritaires pour le choix des séjours.</p>
+                <p>L’encadrement des séjours préadolescents et adolescents est ouvert aux titulaires du BAFA ayant plus de 21 ans ou 3 séjours d’expérience.</p>
+                <p>Les surveillants de baignade débutants ne peuvent pas encadrer en bord de mer mais seront dirigés vers nos séjours en campagne avec une surveillance en piscine pour la 1ère année.</p>
+                <p>Tous les animateurs perçoivent une rémunération y compris les animateurs stagiaires (Indemnité couvrant le coût moyen d’une formation BAFA théorique).</p>
+            </div>
+            <div class="col-2 card padding-60 gap-40">
+                <h3>Les formations</h3>
+                <p>Nous disposons de bourses de formations (BAFA, SB, AFPS, BAFD …..etc ) pour les animateurs ayant fait au moins 1 saison et s’engageant à travailler trois sessions avec ADVE hors petites vacances. Déclaré et reconnu, un organisme de formation utilise une de nos structures en Dordogne pour les stages :</p>
+                <p>– BAFA théorique en Avril</p>
+                <p>– BAFD en juin</p>
+                <p>– BAFA approfondissement à la Toussaint.</p>
+                <p>NB : Nous profitons de ces formations pour recruter une partie de nos équipes d’animation.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-contact container-small gap-80">
+        <div class="gap-40">
+            <h2>Le formulaire de recrutement</h2>
+            <p>Vous avez des interrogations sur les séjours et l’organisation alors remplissez le formulaire de contact ci-dessous.</p>
+            {% for message in app.flashes('success') %}
+                <div class="greenalert">
+                    <div class="close" id="close" onclick="$('.fas').parents('.greenalert').remove();"><i
+                                class="fas fa-times"></i></div>
+                    <div class="success-alert">
+                        <p>{{ message }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+            {% for message in app.flashes('danger') %}
+                <div class="redalert">
+                    <div class="close" id="close" onclick="$('.fas').parents('.redalert').remove();"><i
+                                class="fas fa-times"></i></div>
+                    <div class="danger-alert">
+                        <p>{{ message }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <form class="form-contact gap-30" action="{{ path('main_recrutement') }}" method="post" enctype='multipart/form-data'>
+            <div class="contact-item">
+                <label for="name">Votre nom *</label>
+                <input type="text" name="name" placeholder="Indiquez votre nom">
+            </div>
+            <div class="contact-item">
+                <label for="name">Votre prénom *</label>
+                <input type="text" name="prenom" required placeholder="Indiquez votre prénom">
+            </div>
+            <div class="contact-item">
+                <label for="email">Votre mail *</label>
+                <input type="email" name="email" required placeholder="Indiquez votre adresse mail">
+            </div>
+            <div class="contact-item">
+                <label for="email">Quel type de poste souhaitez-vous ?</label>
+                <select required name="poste">
+                    <option value="0">Sélectionnez un poste</option>
+                    <option value="animateur">Animateur</option>
+                    <option value="directeur">Directeur</option>
+                </select>
+            </div>
+            <div class="contact-item">
+                <label for="file">Votre CV</label>
+                <input required type="file" id="file" name="cv" accept="image/*,.pdf">
+            </div>
+            <div class="contact-item">
+                <label for="file">Votre lettre de motivation</label>
+                <input required type="file" id="file" name="lettre" accept="image/*,.pdf">
+            </div>
+            <div class="contact-item">
+                <label for="message">Votre message</label>
+                <textarea required name="message" id="message" cols="30" rows="10" placeholder="Laissez-nous un message"></textarea>
+            </div>
+            <div class="contact-item-consentement">
+                <input required type="checkbox" name="consentement" id="consentement">
+                <label for="consentement">Je donne mon consentement pour que l’ADVE puisse utiliser
+                    mes données personnelles pour répondre à ma demande de contact.</label>
+            </div>
+            <div>
+                <input class="button-primary" type="submit" value="Envoyer ma demande">
+            </div>
+        </form>
+        </div>
+    </section>
+
+
+
+    <div class="separator"></div>
+
+
+    {{ include('_include/_mainFooter.html.twig') }}
+{% endblock %}

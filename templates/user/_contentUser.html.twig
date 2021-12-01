@@ -1,0 +1,15 @@
+{% for user in users %}
+    <tr>
+        <td><a href="{{ path('user_edit',{ id : user.id}) }}">{{ user.email }}</a></td>
+
+        {#                                {% if user == is_granted('ROLE_ADMIN') %}Administrateur, {% endif %}{% if is_granted('ROLE_EDITOR') %}Utilisateur{% endif %}#}
+        {#                                <td>{{ user.roles ? user.roles|json_encode : '' }}</td>#}
+        <td>{% if user.roles[0] == "ROLE_ADMIN" %}Administrateur{% else %}Utilisateur{% endif %}</td>
+
+        <td>{{ include('user/_delete_form.html.twig') }}</td>
+    </tr>
+{% else %}
+    <tr>
+        <td colspan="3">Pas de résultat</td>
+    </tr>
+{% endfor %}

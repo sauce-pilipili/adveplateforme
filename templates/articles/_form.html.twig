@@ -1,0 +1,30 @@
+{{ form_start(form) }}
+{#<p>Ajouter une catégorie</p>#}
+{#{{ form_row(form.categorie) }}#}
+<p>Ajouter un titre</p>
+<span>Maximum 80 caractères</span>
+{{ form_row(form.title) }}
+<p>Ajouter une meta description</p>
+<span>Maximum 156 caractères</span>
+{{ form_row(form.metaDescription) }}
+<p>Contenu de l'article</p>
+{{ form_row(form.content) }}
+<p>Photo principale</p>
+<div class="upload-1">
+    {{ form_row(form.imageEnAvant,{'attr': {'class': 'article_photoEnAvant', 'onchange':"handleFilesAvant(files)",'id' : 'upload', 'multiple name': 'file'}}) }}
+    <div class="preview-image"><label for="upload"><span id="previewAvant">{% if article.imageEnAvant != null %}
+        {% if app.request.attributes.get('_route') == 'articles_edit' %}
+                    <img class="image-preview" src="{{ asset('/uploads/'~article.imageEnAvant) }}" alt="">
+                {% endif %}
+    {% endif %}</span></label></div>
+    <span id="file-select-button-1" class="browse button black">Ajouter une photo <i class="fa fa-plus"></i></span>
+</div>
+<div class="bouton-box">
+    <button class="bouton-1" style="border: none">{{ button_label|default('Enregistrer') }}</button>
+</div>
+{{ form_end(form) }}
+<script>
+    $('#file-select-button-1').click(function () {
+        $('.upload-1 input').click();
+    });
+</script>

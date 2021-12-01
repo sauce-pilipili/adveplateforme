@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil ADVE{% endblock %}
+
+{% block body %}
+    {{ include('_include/_mainNavigation.html.twig') }}
+
+    <section class="container-contact container-small gap-80">
+        <div class="gap-40">
+            <h1>Vous souhaitez nous contacter ?</h1>
+            <p>Vous avez des interrogations sur les séjours et l’organisation alors remplissez le formulaire de contact
+                ci-dessous.</p>
+        </div>
+        <div>
+            {% for message in app.flashes('success') %}
+                <div class="greenalert">
+                    <div class="close" id="close" onclick="$('.fas').parents('.greenalert').remove();"><i
+                                class="fas fa-times"></i></div>
+                    <div class="success-alert">
+                        <p>{{ message }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+            {% for message in app.flashes('danger') %}
+                <div class="redalert">
+                    <div class="close" id="close" onclick="$('.fas').parents('.redalert').remove();"><i
+                                class="fas fa-times"></i></div>
+                    <div class="danger-alert">
+                        <p>{{ message }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+            <form class="form-contact gap-30" method="post">
+                <div class="contact-item">
+                    <label for="name">Votre nom *</label>
+                    <input type="text" name="nom" placeholder="Indiquez votre nom">
+                </div>
+                <div class="contact-item">
+                    <label for="email">Votre mail *</label>
+                    <input type="email" name="email" placeholder="Indiquez votre adresse mail">
+                </div>
+                <div class="contact-item">
+                    <label for="tel">Votre numéro de téléphone *</label>
+                    <input type="number" name="tel" placeholder="Indiquez votre numéro de téléphone">
+                </div>
+                <div class="contact-item">
+                    <label for="message">Votre message</label>
+                    <textarea name="message" id="message" cols="30" rows="10"
+                              placeholder="Laissez-nous un message"></textarea>
+                </div>
+                <div class="contact-item-consentement">
+                    <input type="checkbox" name="consentement" id="consentement" required>
+                    <label for="consentement">Je donne mon consentement pour que l’ADVE puisse utiliser
+                        mes données personnelles pour répondre à ma demande de contact.</label>
+                </div>
+                <div>
+                    <input class="button-primary" type="submit" value="Envoyer ma demande">
+                </div>
+            </form>
+        </div>
+    </section>
+
+
+    <div class="separator"></div>
+
+
+    {{ include('_include/_mainFooter.html.twig') }}
+
+{% endblock %}

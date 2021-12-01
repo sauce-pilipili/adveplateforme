@@ -1,0 +1,76 @@
+{{ form_start(form) }}
+<p>Ajouter un nom</p>
+{{ form_row(form.name) }}
+<p>Ajouter une meta description</p>
+{{ form_row(form.metaDescription) }}
+<p>Ajouter une description de l'activité</p>
+{{ form_row(form.description) }}
+<p>Ajouter l'histoire du sport</p>
+{{ form_row(form.histoire) }}
+<p>Ajouter une citation</p>
+{{ form_row(form.citation) }}
+<p>Ajouter les discipline de l'activité</p>
+{{ form_row(form.discipline) }}
+<p>Ajouter l'equipement de l'activité </p>
+{{ form_row(form.equipement) }}
+<p>Ajouter les aptitudes de l'activité</p>
+{{ form_row(form.aptitudes) }}
+<p>Ajouter une photo de mise en avant</p>
+<div class="upload-1">
+    {{ form_row(form.photoEnAvant,{'attr': {'class': 'article_photoEnAvant', 'onchange':"handleFilesAvant(files)",'id' : 'upload', 'multiple name': 'file'}}) }}
+    <div class="preview-image"><label for="upload"><span id="previewAvant">{% if activite.photoEnAvant != null %}
+        {% if app.request.attributes.get('_route') == 'activites_edit' %}
+                    <img class="image-preview" src="{{ asset('/uploads/'~activite.photoEnAvant) }}" alt="">
+                {% endif %}
+    {% endif %}</span></label></div>
+    <span id="file-select-button-1" class="browse button black">Ajouter une photo <i class="fa fa-plus"></i></span>
+</div>
+<p>legende de la photo de mise en avant</p>
+{{ form_row(form.legendeEnAvant) }}
+
+<p>Ajouter une photo pour l'histoire</p>
+<div class="upload-2">
+    {{ form_row(form.photoHistoire,{'attr': {'class': 'article_photoEnAvant', 'onchange':"handleFilesFond(files)",'id' : 'upload', 'multiple name': 'file'}}) }}
+    <div class="preview-image"><label for="upload"><span id="previewFond">{% if activite.photoHistoire != null %}
+        {% if app.request.attributes.get('_route') == 'activites_edit' %}
+                    <img class="image-preview" src="{{ asset('/uploads/'~activite.photoHistoire) }}" alt="">
+                {% endif %}
+    {% endif %}</span></label>
+    </div>
+    <span id="file-select-button-2" class="browse button black">Ajouter une photo <i class="fa fa-plus"></i></span>
+</div>
+<p>legende de la photo histoire</p>
+{{ form_row(form.legendeHistoire) }}
+
+
+<p>Ajouter une photo pour la discipline</p>
+<div class="upload-3">
+    {{ form_row(form.photoDiscipline,{'attr': {'class': 'article_photoEnAvant', 'onchange':"handleFilesGalerie(files)",'id' : 'upload', 'multiple name': 'file'}}) }}
+    <div class="preview-image"><label for="upload"><span id="previewGalerie">{% if activite.photoDiscipline != null %}
+        {% if app.request.attributes.get('_route') == 'activites_edit' %}
+                    <img class="image-preview" src="{{ asset('/uploads/'~activite.photoDiscipline) }}" alt="">
+                {% endif %}
+    {% endif %}</span></label>
+    </div>
+    <span id="file-select-button-3" class="browse button black">Ajouter une photo <i class="fa fa-plus"></i></span>
+</div>
+<p>legende de la photo discipline</p>
+{{ form_row(form.legendePhotoDiscipline) }}
+<div class="bouton-box">
+    <button class="bouton-1" style="border: none">{{ button_label|default('Enregistrer') }}</button>
+</div>
+{{ form_end(form) }}
+<script>
+    $('#file-select-button-1').click(function () {
+        $('.upload-1 input').click();
+    });
+    $('#file-select-button-2').click(function () {
+        $('.upload-2 input').click();
+    });
+    $('#file-select-button-3').click(function () {
+        $('.upload-3 input').click();
+    });
+
+
+
+</script>

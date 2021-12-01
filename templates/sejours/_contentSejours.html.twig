@@ -1,0 +1,16 @@
+{% for sejour in sejours %}
+    <tr>
+
+        <td><a style="cursor:pointer " href="{{ path('sejours_edit', {'id': sejour.id}) }}">{{ sejour.titre }}</a></td>
+        <td>{{ sejour.ageMin }}</td>
+        <td>{{ sejour.ageMax }}</td>
+        <td>{{ sejour.prixMin }}</td>
+        <td>
+            {{ include('sejours/_delete_form.html.twig') }}
+        </td>
+    </tr>
+{% else %}
+    <tr>
+        <td colspan="22">Aucun résultat</td>
+    </tr>
+{% endfor %}

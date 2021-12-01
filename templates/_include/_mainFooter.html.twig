@@ -1,0 +1,80 @@
+<footer class="container-large_right">
+    <div class="footer_bloc">
+        <div class="footer-item">
+            <h4>ADVE</h4>
+            <ul>
+                <li>
+                    <p>31 bis, avenue du professeur<br>Albert Calmette<br>24100 BERGERAC</p>
+                </li>
+                <li>
+                    <a href="tel:+33553581480">05 53 58 14 80</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer-item">
+            <h4>Les activités</h4>
+            <ul id="activiteLi">
+
+            </ul>
+        </div>
+        <div class="footer-item">
+            <h4>Les centres</h4>
+            <ul id="categorieCentreLi">
+
+            </ul>
+        </div>
+        <div class="footer-item footer-last-item">
+            <h4>Navigation</h4>
+            <ul>
+                <li>
+                    <a href="{{ path('main_vacances') }}">Nos séjours</a>
+                </li>
+                <li>
+                    <a href="{{ path('main_classes',{'categorie':'Tous'}) }}">Les classes découvertes</a>
+                </li>
+                <li>
+                    <a href="{{ path('main_actu') }}">Les actualités</a>
+                </li>
+                <li>
+                    <a href="{{ path('main_contact') }}">Contactez-nous</a>
+                </li>
+                <li>
+                    <a href="{{ path('main_about') }}">Qui sommes-nous ?</a>
+                </li>
+                <li>
+                    <a href="{{ path('main_info') }}">Infos pratiques</a>
+                </li>
+                <li>
+                    <a href="{{ path('main_ce') }}">CE</a>
+                </li>
+                <li>
+                    <a href="{{ path('main_recrutement') }}">Recrutement</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer-rs">
+            <div class="footer-bloc-rs">
+                <h4>Suivez-nous sur <br>les réseaux sociaux !</h4>
+                <div class="footer-picto-rs">
+                    <a href="">
+                        <img src="{{ asset('img/linkedin.svg') }}" alt="Linkedin">
+                    </a>
+                    <a href="">
+                        <img src="{{ asset('img/twitter.svg') }}" alt="Twitter">
+                    </a>
+                    <a href="">
+                        <img src="{{ asset('img/facebook.svg') }}" alt="Facebook">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer_bloc-mentions padding-right">
+        <p>Copyright © ADVE 2022 - Tous droits réservés</p>
+        <div class="bloc-mentions">
+            <a href="{{ path('main_legals') }}">Mentions légales</a>
+            <a href="{{ path('main_cgv') }}">CGV</a>
+        </div>
+    </div>
+</footer>

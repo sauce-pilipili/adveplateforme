@@ -1,0 +1,11 @@
+{{ form_start(form) }}
+<p>Ajouter une adresse mail</p>
+{{ form_row(form.email) }}
+<p>Ajouter un niveau d'accès</p>
+{{ form_row(form.roles) }}
+{% if app.request.attributes.get('_route') == 'user_new' %}
+<p>Ajouter un mot de passe de première connexion</p>
+{{ form_row(form.password) }}
+{% endif %}
+<button class="bouton-1" style="border: none">{{ button_label|default('Enregistrer') }}</button>
+{{ form_end(form) }}

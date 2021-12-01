@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil ADVE{% endblock %}
+
+{% block body %}
+    {{ include('_include/_mainNavigation.html.twig') }}
+
+    <section class="container-large margin-classic">
+        <h1>Nos actualités</h1>
+    </section>
+
+    <section class="container-large">
+        <div class="container-card">
+            {% for article in articles %}
+                <div class="card">
+                    <img src="{{ asset('/uploads/'~article.imageEnAvant) }}" alt="Photo de l'actu">
+                    <div class="card-text">
+                        <div class="card-bloc-title">
+                            <h3>{{ article.title }}</h3>
+                            <p>publié le:{{ article.createdDate|date('d-m-Y') }}</p>
+                        </div>
+                        <p>{{ article.content |slice(0,200) |striptags|raw }}...</p>
+                        <div>
+                            <a href="{{ path('main_actu_view',{'slug':article.slug}) }}">Lire la suite</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+{#        </div>#}
+{#            <div class="button-center">#}
+{#            <a class="button-primary" href="">Voir tous les séjours</a>#}
+{#        </div>#}
+    </section>
+
+
+
+
+    <div class="separator"></div>
+
+    {{ include('_include/_mainFooter.html.twig') }}
+
+
+
+{% endblock %}

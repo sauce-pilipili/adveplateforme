@@ -1,0 +1,112 @@
+{{ form_start(form) }}
+<p>Ajouter un titre de séjour</p>
+{{ form_row(form.titre) }}
+<p>Ajouter le centre du séjour</p>
+{{ form_row(form.centre) }}
+<p>Ajouter une méta description</p>
+{{ form_row(form.metaDescription) }}
+<p>Ajouter une introduction</p>
+{{ form_row(form.introduction) }}
+<p>Ajouter une saison</p>
+{{ form_row(form.saisons) }}
+<p>Ajouter une activité principale</p>
+{{ form_row(form.activite) }}
+<p>Ajouter les durées de séjours possibles</p>
+{% for child in form.dureeSejour %}
+    <div class="containerRadio">
+        {{- form_widget(child) -}}
+        {{- form_label(child, null) -}}
+        <span class="checkmark"></span>
+    </div>
+{% endfor %}
+<p>Ajouter les dates du séjour</p>
+<span>Ecrivez les dates sous forme de liste</span>
+{{ form_row(form.dateSejour) }}
+
+<p>Ajouter l'âge minimum</p>
+{#<div class="dropdown-spinner">#}
+{#    <span class="spinner-bis" onclick="majQuantite(-1,'sejours_ageMin')">-</span>#}
+    {{ form_row(form.ageMin) }}
+{#    <span class="spinner-bis" onclick="majQuantite(+1,'sejours_ageMin')">+</span>#}
+{#</div>#}
+
+
+<p>Ajouter l'âge maximum</p>
+{{ form_row(form.ageMax) }}
+<p>Ajouter le prix minimum</p>
+{{ form_row(form.prixMin) }}
+<p>Ajouter un texte pour le cadre de vie</p>
+{{ form_row(form.cadreDeVie) }}
+<p>Ajouter un texte pour l'encadrement</p>
+{{ form_row(form.Encadrement) }}
+<p>Ajouter un texte pour les plus du séjour</p>
+{{ form_row(form.plusDuSejour) }}
+<p>Ajouter un texte pour les indispensables du séjour</p>
+{{ form_row(form.indispensables) }}
+<p>Ajouter un texte pour les activités dominantes</p>
+{{ form_row(form.activitesDominantes) }}
+<p>Ajouter un texte pour les activités annexes</p>
+{{ form_row(form.activitesAnnexes) }}
+
+
+
+<p>Ajouter une photo de présentation de la classe</p>
+<div class="upload-1">
+    {{ form_row(form.photoEnAvant,{'attr': {'class': 'article_photoEnAvant', 'onchange':"handleFilesAvant(files)",'id' : 'upload', 'multiple name': 'file'}}) }}
+    <div class="preview-image"><label for="upload"><span id="previewAvant">{% if sejour.photoEnAvant != null %}
+        {% if app.request.attributes.get('_route') == 'sejours_edit' %}
+                    <img class="image-preview" src="{{ asset('/uploads/'~sejour.photoEnAvant) }}" alt="">
+                {% endif %}
+    {% endif %}</span></label></div>
+    <span id="file-select-button-1" class="browse button black">Ajouter une photo <i class="fa fa-plus"></i></span>
+</div>
+<p>Légende de la photo de présentation de classe</p>
+{{ form_row(form.legendePhotoEnAvant) }}
+
+
+<p>Ajouter une photo du cadre de vie</p>
+<div class="upload-2">
+    {{ form_row(form.photoCadre,{'attr': {'class': 'article_photoEnAvant', 'onchange':"handleFilesFond(files)",'id' : 'upload', 'multiple name': 'file'}}) }}
+    <div class="preview-image"><label for="upload"><span id="previewFond">{% if sejour.photoCadre != null %}
+        {% if app.request.attributes.get('_route') == 'sejours_edit' %}
+                    <img class="image-preview" src="{{ asset('/uploads/'~sejour.photoCadre) }}" alt="">
+                {% endif %}
+    {% endif %}</span></label></div>
+    <span id="file-select-button-2" class="browse button black">Ajouter une photo <i class="fa fa-plus"></i></span>
+</div>
+<p>Légende de la photo du cadre de vie</p>
+{{ form_row(form.legendePhotoCadre) }}
+
+
+
+<p>Ajouter une photo de l'encadrement</p>
+<div class="upload-3">
+    {{ form_row(form.photoEncadrement,{'attr': {'class': 'article_photoEnAvant', 'onchange':"handleFilesGalerie(files)",'id' : 'upload', 'multiple name': 'file'}}) }}
+    <div class="preview-image"><label for="upload"><span id="previewGalerie">{% if sejour.photoEncadrement != null %}
+        {% if app.request.attributes.get('_route') == 'sejours_edit' %}
+                    <img class="image-preview" src="{{ asset('/uploads/'~sejour.photoEncadrement) }}" alt="">
+                {% endif %}
+    {% endif %}</span></label></div>
+    <span id="file-select-button-3" class="browse button black">Ajouter une photo <i class="fa fa-plus"></i></span>
+</div>
+<p>Légende de la photo du cadre de vie</p>
+{{ form_row(form.legendePhotoEncadrement) }}
+
+
+
+
+<div class="bouton-box">
+    <button class="bouton-1" style="border: none">{{ button_label|default('Enregistrer') }}</button>
+</div>
+{{ form_end(form) }}
+<script>
+    $('#file-select-button-1').click(function () {
+        $('.upload-1 input').click();
+    });
+    $('#file-select-button-2').click(function () {
+        $('.upload-2 input').click();
+    });
+    $('#file-select-button-3').click(function () {
+        $('.upload-3 input').click();
+    });
+</script>

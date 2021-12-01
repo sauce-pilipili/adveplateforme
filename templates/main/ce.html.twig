@@ -1,0 +1,99 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil ADVE{% endblock %}
+
+{% block body %}
+    {{ include('_include/_mainNavigation.html.twig') }}
+    <section class="container-xsmall gap-40">
+        <h1>Comité d'entreprise</h1>
+        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no</p>
+    </section>
+
+
+
+    <section class="container-diagonal-box margin">
+        <div class="diagonal-box container-large">
+            <div class="container-card-large row-step">
+                <div class="col-1">
+                    <h2>Nos offres</h2>
+                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no</p>
+                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no</p>
+                </div>
+                <div class="col-2">
+                    <h2>Les conditions</h2>
+                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no</p>
+                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="container-contact container-small gap-80">
+        <div class="gap-40">
+            <h2>Vous souhaitez des informations complémentaires ?</h2>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no</p>
+        </div>
+        <div>
+            {% for message in app.flashes('success') %}
+                <div class="greenalert">
+                    <div class="close" id="close" onclick="$('.fas').parents('.greenalert').remove();"><i
+                                class="fas fa-times"></i></div>
+                    <div class="success-alert">
+                        <p>{{ message }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+            {% for message in app.flashes('danger') %}
+                <div class="redalert">
+                    <div class="close" id="close" onclick="$('.fas').parents('.redalert').remove();"><i
+                                class="fas fa-times"></i></div>
+                    <div class="danger-alert">
+                        <p>{{ message }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        <form class="form-contact gap-30" method="post" action="">
+            <div class="contact-item">
+                <label for="name">Votre entreprise *</label>
+                <input type="text" name="entreprise" placeholder="Indiquez le nom de votre entreprise">
+            </div>
+            <div class="contact-item">
+                <label for="name">Votre nom *</label>
+                <input type="text" name="nom" placeholder="Indiquez votre nom">
+            </div>
+            <div class="contact-item">
+                <label for="email">Votre mail *</label>
+                <input type="email" name="email" placeholder="Indiquez votre adresse mail">
+            </div>
+            <div class="contact-item">
+                <label for="tel">Votre numéro de téléphone *</label>
+                <input type="number" name="tel" placeholder="Indiquez votre numéro de téléphone">
+            </div>
+            <div class="contact-item">
+                <label for="message">Votre message</label>
+                <textarea name="message" id="message" cols="30" rows="10" placeholder="Laissez-nous un message"></textarea>
+            </div>
+            <div class="contact-item-consentement">
+                <input type="checkbox" name="consentement" id="consentement" required>
+                <label for="consentement">Je donne mon consentement pour que l’ADVE puisse utiliser
+                    mes données personnelles pour répondre à ma demande de contact.</label>
+            </div>
+            <div>
+                <input class="button-primary" type="submit" value="Envoyer ma demande">
+            </div>
+        </form>
+        </div>
+    </section>
+
+
+
+    <div class="separator"></div>
+
+
+
+
+    {{ include('_include/_mainFooter.html.twig') }}
+
+
+{% endblock %}

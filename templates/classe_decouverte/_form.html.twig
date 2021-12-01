@@ -1,0 +1,56 @@
+{{ form_start(form) }}
+<p>Ajouter le nom de la classe</p>
+{{ form_row(form.titre) }}
+<p>Ajouter la méta description</p>
+{{ form_row(form.metaDescription) }}
+<p>Ajouter un texte d'introduction</p>
+{{ form_row(form.introduction) }}
+<p>Ajouter une presentation</p>
+{{ form_row(form.presentation) }}
+<p>Ajouter un texte pour l'encadrement</p>
+{{ form_row(form.encadrement) }}
+<p>Ajouter un texte pour l'hebergement</p>
+{{ form_row(form.hebergement) }}
+<p>ajouter un texte pour la decouverte</p>
+{{ form_row(form.decouverte) }}
+<p>Ajouter un texte pour l'animation</p>
+{{ form_row(form.animation) }}
+
+<p>Ajouter une photo de mise en avant</p>
+<div class="upload-1">
+    {{ form_row(form.photoEnAvant,{'attr': {'class': 'article_photoEnAvant', 'onchange':"handleFilesAvant(files)",'id' : 'upload', 'multiple name': 'file'}}) }}
+    <div class="preview-image"><label for="upload"><span id="previewAvant">{% if classe_decouverte.photoEnAvant != null %}
+        {% if app.request.attributes.get('_route') == 'classe_decouverte_edit' %}
+                    <img class="image-preview" src="{{ asset('/uploads/'~classe_decouverte.photoEnAvant) }}" alt="">
+                {% endif %}
+    {% endif %}</span></label></div>
+    <span id="file-select-button-1" class="browse button black">Ajouter une photo <i class="fa fa-plus"></i></span>
+</div>
+<p>legende de la photo de mise en avant</p>
+{{ form_row(form.legendePhotoEnAvant) }}
+
+<p>Ajouter une photo de presentation de la classe</p>
+<div class="upload-2">
+    {{ form_row(form.photoClasse,{'attr': {'class': 'article_photoEnAvant', 'onchange':"handleFilesFond(files)",'id' : 'upload', 'multiple name': 'file'}}) }}
+    <div class="preview-image"><label for="upload"><span id="previewFond">{% if classe_decouverte.photoClasse != null %}
+        {% if app.request.attributes.get('_route') == 'classe_decouverte_edit' %}
+                    <img class="image-preview" src="{{ asset('/uploads/'~classe_decouverte.photoClasse) }}" alt="">
+                {% endif %}
+    {% endif %}</span></label></div>
+    <span id="file-select-button-2" class="browse button black">Ajouter une photo <i class="fa fa-plus"></i></span>
+</div>
+<p>legende de la photo de presentation de classe</p>
+{{ form_row(form.legendePhotoClasse) }}
+
+<div class="bouton-box">
+    <button class="bouton-1" style="border: none">{{ button_label|default('Enregistrer') }}</button>
+</div>
+{{ form_end(form) }}
+<script>
+    $('#file-select-button-1').click(function () {
+        $('.upload-1 input').click();
+    });
+    $('#file-select-button-2').click(function () {
+        $('.upload-2 input').click();
+    });
+  </script>

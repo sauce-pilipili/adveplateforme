@@ -1,0 +1,82 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Activites{% endblock %}
+
+{% block body %}
+    <h1>Activites</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ activite.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ activite.name }}</td>
+            </tr>
+            <tr>
+                <th>Slug</th>
+                <td>{{ activite.slug }}</td>
+            </tr>
+            <tr>
+                <th>MetaDescription</th>
+                <td>{{ activite.metaDescription }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ activite.description }}</td>
+            </tr>
+            <tr>
+                <th>Histoire</th>
+                <td>{{ activite.histoire }}</td>
+            </tr>
+            <tr>
+                <th>Citation</th>
+                <td>{{ activite.citation }}</td>
+            </tr>
+            <tr>
+                <th>Discipline</th>
+                <td>{{ activite.discipline }}</td>
+            </tr>
+            <tr>
+                <th>Equipement</th>
+                <td>{{ activite.equipement }}</td>
+            </tr>
+            <tr>
+                <th>Aptitudes</th>
+                <td>{{ activite.aptitudes }}</td>
+            </tr>
+            <tr>
+                <th>PhotoEnAvant</th>
+                <td>{{ activite.photoEnAvant }}</td>
+            </tr>
+            <tr>
+                <th>LegendeEnAvant</th>
+                <td>{{ activite.legendeEnAvant }}</td>
+            </tr>
+            <tr>
+                <th>PhotoHistoire</th>
+                <td>{{ activite.photoHistoire }}</td>
+            </tr>
+            <tr>
+                <th>LegendeHistoire</th>
+                <td>{{ activite.legendeHistoire }}</td>
+            </tr>
+            <tr>
+                <th>PhotoDiscipline</th>
+                <td>{{ activite.photoDiscipline }}</td>
+            </tr>
+            <tr>
+                <th>LegendePhotoDiscipline</th>
+                <td>{{ activite.legendePhotoDiscipline }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('activites_index') }}">back to list</a>
+
+    <a href="{{ path('activites_edit', {'id': activite.id}) }}">edit</a>
+
+    {{ include('activites/_delete_form.html.twig') }}
+{% endblock %}

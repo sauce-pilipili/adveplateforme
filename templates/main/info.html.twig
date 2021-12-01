@@ -1,0 +1,112 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil ADVE{% endblock %}
+
+{% block body %}
+    {{ include('_include/_mainNavigation.html.twig') }}
+
+    <section class="container-xsmall gap-40">
+        <h1>Infos pratiques</h1>
+        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem</p>
+    </section>
+
+    <section class="container-large">
+        <div class="container">
+            <div class="col-1 card padding-60 gap-40">
+                <h3>Informations importantes</h3>
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. </p>
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est.</p>
+            </div>
+            <div class="col-2 card padding-60 gap-40">
+                <h3>Les documents nécessaires</h3>
+                <p>✓ Lorem ipsum dolor sit amet, consetetur sadipscing
+                    elitr, sed diam nonumy eirmod tempor invidunt ut
+                    labore et dolore magna aliquyam erat, sed diam
+                    voluptua. At vero eos et accusam et justo duo dolores et
+                    ea rebum.<br>
+                    ✓ Stet clita kasd gubergren, no sea takimata sanctus est
+                    Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
+                    amet, consetetur sadipscing elitr, sed diam nonumy
+                    eirmod tempor invidunt ut labore et dolore magna
+                    aliquyam erat, sed diam voluptua.<br>
+                    ✓ At vero eos et accusam et justo duo dolores et ea
+                    rebum. Stet clita kasd gubergren, no sea takimata
+                    sanctus est Lorem ipsum dolor sit amet
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-diagonal-box margin">
+        <div class="diagonal-box container-large">
+            <div class="container-card-large row-step">
+                <div class="col-1">
+                    <h2>Bon vacances de la CAF</h2>
+                    <p>L’asscosiation accepte les bons vacances de la CAF, à condition que l’association soit affiliée à la CAF de votre département : [ nom des départements déjà affiliés ].</p>
+                    <p>Si la CAF de votre département ne fait pas partie des départements affiliés avec l’association, la demande d’agrément peut prend au minimum 30 jours avant être validé.</p>
+                </div>
+                <div class="col-2">
+                    <h2>Les conditions de séjours</h2>
+                    <p>✓ Votre enfant doit être âgé de 6 ans minimum et de 17 ans maximum, les séjours ne sont pas prévus pour les personnes majeures.</p>
+                    <p>✓ Chaque enfant doit fournir une fiche sanitaire pour pouvoir participer aux séjours</p>
+                    <p>À voir les conditions requises pour chaque séjour depuis la fiche de présentation des séjours. </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-large container-ask">
+        <div class="gap-40">
+            <h2>Toutes vos questions</h2>
+            <div class="gap-40">
+                <h3>Qestion 1</h3>
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. </p>
+            </div>
+            <div class="gap-40">
+                <h3>Qestion 1</h3>
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. </p>
+            </div>
+            <div class="gap-40">
+                <h3>Qestion 1</h3>
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. </p>
+            </div>
+        </div>
+        <div class="gap-40">
+            <div class="gap-40">
+                <h3>Qestion 1</h3>
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. </p>
+            </div>
+            <div class="gap-40">
+                <h3>Qestion 1</h3>
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. </p>
+            </div>
+            <div class="gap-40">
+                <h3>Qestion 1</h3>
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-map">
+        <img src="{{ asset('img/map.png') }}" alt="">
+        <div>
+            <div class="card">
+                <h3>Où nous trouver ?</h3>
+                <div class="card-item">
+                    <p>ADVE24<br>Association Découverte Vacances Equilibre</p>
+                    <p><b>31 bis, avenue du Professeur Albert Calmette <br>24100 BERGERAC</b></p>
+                    <a href="tel:+33553581480"><b>05 53 58 14 80</b></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="separator"></div>
+
+
+    {{ include('_include/_mainFooter.html.twig') }}
+
+
+
+{% endblock %}

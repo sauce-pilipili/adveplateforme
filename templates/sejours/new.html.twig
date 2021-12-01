@@ -1,0 +1,34 @@
+{% extends 'baseAdmin.html.twig' %}
+{% block title %}Séjours{% endblock %}
+    {% block body %}
+        <div class="main">
+            {{ include('_include/_navigation.html.twig') }}
+            <div class="content">
+                <div class="welcome-container-title">
+                    <h1>Ajout d'un nouveau séjour</h1>
+                    <a class="bouton-2" href="{{ path('sejours_index') }}">Quitter <i class="fas fa-times"></i></a>
+                </div>
+                <div class="welcome-container">
+                    {{ include('sejours/_form.html.twig') }}
+                </div>
+            </div>
+        </div>
+        <script>
+            function majQuantite(qte, champ)
+            {
+                quant = document.getElementById(champ).value;
+                quantite = parseInt(quant) + parseInt(qte);
+                if (quantite <= 0) {quantite = 1;}
+                if (quantite > 20) {quantite = 20;}
+                document.getElementById(champ).value = quantite;
+            }
+        </script>
+    {% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/formulaire.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/radio.css') }}">
+{% endblock %}
+{% block javascripts %}
+    <script src="{{ asset('js/imagePreview.js') }}"></script>
+{% endblock %}
+

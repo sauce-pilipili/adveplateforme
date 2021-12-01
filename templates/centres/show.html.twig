@@ -1,0 +1,78 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Centres{% endblock %}
+
+{% block body %}
+    <h1>Centres</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ centre.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ centre.name }}</td>
+            </tr>
+            <tr>
+                <th>Slug</th>
+                <td>{{ centre.slug }}</td>
+            </tr>
+            <tr>
+                <th>MetaDescription</th>
+                <td>{{ centre.metaDescription }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ centre.description }}</td>
+            </tr>
+            <tr>
+                <th>Localisation</th>
+                <td>{{ centre.localisation }}</td>
+            </tr>
+            <tr>
+                <th>AgeMin</th>
+                <td>{{ centre.ageMin }}</td>
+            </tr>
+            <tr>
+                <th>AgeMax</th>
+                <td>{{ centre.ageMax }}</td>
+            </tr>
+            <tr>
+                <th>PhotoCadre</th>
+                <td>{{ centre.photoCadre }}</td>
+            </tr>
+            <tr>
+                <th>LegendePhotoCadre</th>
+                <td>{{ centre.legendePhotoCadre }}</td>
+            </tr>
+            <tr>
+                <th>PhotoEncadrement</th>
+                <td>{{ centre.photoEncadrement }}</td>
+            </tr>
+            <tr>
+                <th>LegendePhotoEncadrement</th>
+                <td>{{ centre.legendePhotoEncadrement }}</td>
+            </tr>
+            <tr>
+                <th>CadreDeVie</th>
+                <td>{{ centre.cadreDeVie }}</td>
+            </tr>
+            <tr>
+                <th>Encadrement</th>
+                <td>{{ centre.Encadrement }}</td>
+            </tr>
+            <tr>
+                <th>CentrePlus</th>
+                <td>{{ centre.centrePlus }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('centres_index') }}">back to list</a>
+
+    <a href="{{ path('centres_edit', {'id': centre.id}) }}">edit</a>
+
+    {{ include('centres/_delete_form.html.twig') }}
+{% endblock %}

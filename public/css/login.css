@@ -1,0 +1,59 @@
+.espace {
+
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: 100%;
+    margin-top: 120px;
+}
+.connexion{
+    background-color: #FFFFFF;
+    padding: 20px;
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.connexion label{
+    align-self: flex-start;
+    margin-left: 35px;
+}
+
+.boutonlogin{
+    background: #54DE80 0 0 no-repeat padding-box;
+    border: 1px solid #54DE80;
+    border-radius: 10px;
+    opacity: 1;
+    /*background-color: var(--green-bg);*/
+    padding: 14px;
+    font-weight: bold;
+    /*color: #000;*/
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 25px;
+    text-align: center;
+
+}
+
+.boutonlogin :hover{
+    cursor: pointer;
+}
+
+.inputlogin{
+    font-family: 'Montserrat', sans-serif;
+    height: 20px;
+    width: 80%;
+    font-size: 14px;
+    color: #9D9D9D;
+}
+body{
+    background-color: #F8F8F8;
+}
+
+
+
+
+
+

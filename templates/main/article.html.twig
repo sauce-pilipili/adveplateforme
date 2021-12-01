@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil ADVE{% endblock %}
+
+{% block body %}
+    {{ include('_include/_mainNavigation.html.twig') }}
+    <section class="container-small">
+        <h1>{{ article.title }}</h1>
+        <p>publié le: {{ article.createdDate|date('d-m-Y') }}</p>
+        <img src="{{ asset('uploads/'~article.imageEnAvant) }}" alt="{{ article.title }}">
+        {{ article.content|raw }}
+    </section>
+
+    <section class="container-large gap-80">
+        <h2>Ces articles pourraient vous intéresser</h2>
+            <div class="container-card">
+                {% for article in articles %}
+                    <div class="card">
+                        <img src="{{ asset('/uploads/'~article.imageEnAvant) }}" alt="Photo de l'actu">
+                        <div class="card-text">
+                            <div class="card-bloc-title">
+                                <h3>{{ article.title }}</h3>
+                                <p>publié le:{{ article.createdDate|date('d-m-Y') }}</p>
+                            </div>
+                            <p>{{ article.content |slice(0,200) |striptags|raw }}...</p>
+                            <div>
+                                <a href="{{ path('main_actu_view',{'slug':article.slug}) }}">Lire la suite</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+    </section>
+
+
+
+
+    <section class="container-check container-large">
+        <div class="bloc-check">
+            <img src="{{ asset('img/check.svg') }}" alt="Séjours vérifiés">
+            <div>
+                <h3>Séjours vérifiés</h3>
+                <p>Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit,</p>
+            </div>
+        </div>
+        <div class="bloc-check">
+            <img src="{{ asset('img/pay.svg') }}" alt="Paiement sécurisé">
+            <div>
+                <h3>Paiement sécurisé</h3>
+                <p>Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit,</p>
+            </div>
+        </div>
+        <div class="bloc-check">
+            <img src="{{ asset('img/stop.svg') }}" alt="Annulation">
+            <div>
+                <h3>Annulation</h3>
+                <p>Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit,</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="separator"></div>
+
+
+    {{ include('_include/_mainFooter.html.twig') }}
+
+
+{% endblock %}

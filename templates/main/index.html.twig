@@ -1,0 +1,333 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil ADVE{% endblock %}
+
+{% block body %}
+    {{ include('_include/_mainNavigation.html.twig') }}
+
+    <section class="main container-large_main">
+        <div class="main_bloc-1">
+            <div class="main_row-1">
+                <h1>SEJOURS COLONIES
+                    <br>DE VACANCES</h1>
+                <p>Séjours de vacances à vocation sportive</p>
+            </div>
+            <div class="form-search">
+                <div class="form-search_mobile">
+                    <div id="show" class="search-mobile_row-1">
+                        <p>Faire une recherche</p>
+                        <img src="{{ asset('img/chevron-down.svg') }}" alt="Flèche vers le bas">
+                    </div>
+                    <form class="form-show" style="display: none;" action="" method="post">
+                        <div>
+                            <label for="">Les centres
+                            <select class="" name="inputcategorieCentre" id="inputcategorieCentre">
+                                <option value="">Nom du centre</option>
+                            </select></label>
+                        </div>
+                        <div>
+                            <label for="">Les activités
+                            <select class="" name="inputActivite" id="inputActivite">
+                                <option value="">Nom de l'activité</option>
+                            </select></label>
+                        </div>
+                        <div>
+                            <label for="">Âge de l'enfant
+                            <input type="text" name="age" id="" placeholder="Indiquez l'âge"></label>
+                        </div>
+                        <div>
+                            <label for="">Saison
+                            <select class="" name="" id="">
+                                <option value="">La saison</option>
+                                <option value="">Éte</option>
+                            </select></label>
+                        </div>
+                        <div>
+                            <label for="">Durée du séjour</label>
+                            <select class="" name="" id="">
+                                <option value="">La durée</option>
+                                <option value="7jours">7 jours</option>
+                                <option value="12jours">12 jours</option>
+                                <option value="19jours">19 jours</option>
+                            </select>
+                        </div>
+                        <div>
+                            <input class="button-primary button-submit" type="submit">
+                        </div>
+                    </form>
+
+                </div>
+                <form class="form" action="" method="post">
+                    <div>
+                        <label for="">Les centres
+                        <select class="" name="" id="inputcategorieCentre">
+                            <option value="">Nom du centre</option>
+                        </select></label>
+                    </div>
+                    <div>
+                        <label for="">Les activités
+                        <select class="" name="" id="inputActivite">
+                            <option value="">L'activité</option>
+
+                        </select></label>
+                    </div>
+                    <div>
+                        <label for="">Âge de l'enfant</label>
+                        <input type="text" name="age" id="" placeholder="Indiquez l'âge">
+                    </div>
+                    <div>
+                        <label for="">Saison</label>
+                        <select class="" name="saison" id="">
+                            <option value="">La saison</option>
+                            <option value="Printemps">Printemps</option>
+                            <option value="Ete">Ete</option>
+                            <option value="Automne">Automne</option>
+                            <option value="hiver">hiver</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="">Durée du séjour</label>
+                        <select class="" name="duree" id="">
+                            <option value="">La durée</option>
+                            <option value="7jours">7 jours</option>
+                            <option value="12jours">12 jours</option>
+                            <option value="19jours">19 jours</option>
+                        </select>
+                    </div>
+                    <div>
+                        <input class="button-primary" type="submit">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="main_bloc-2">
+            <img src="{{ asset('img/adve-accueil.png') }}" alt="adve">
+        </div>
+    </section>
+    <section class="container-diagonal-box deco-accueil overflow-hidden-mobile">
+        <div class="diagonal-box-margin">
+            <div><p class="text-decoration">ADVE</p></div>
+        </div>
+    </section>
+    <section class="section-container_left container-large_left">
+        <img src="{{ asset('img/adve-a-propos.png') }}" alt="À propos de l'ADVE">
+        <div class="gap-40 padding-left">
+            <h2>L'association</h2>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+                et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+                rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+                dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                magna aliquyam erat, sed diam</p>
+            <div>
+                <a class="button-primary" href="{{ path('main_about') }}">En savoir plus</a>
+            </div>
+        </div>
+    </section>
+    <section class="section-container_right container-large_right">
+        <div class="gap-40 padding-right">
+            <h2>Nos valeurs</h2>
+            <div class="bloc_row">
+                <div>
+                    <h3>La tolérance</h3>
+                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
+                        ut labore et</p>
+                </div>
+                <div>
+                    <h3>L'amitié</h3>
+                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
+                        ut labore et</p>
+                </div>
+            </div>
+            <div class="bloc_row">
+                <div>
+                    <h3>La respect</h3>
+                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
+                        ut labore et</p>
+                </div>
+                <div>
+                    <h3>L'apprentissage</h3>
+                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
+                        ut labore et</p>
+                </div>
+            </div>
+        </div>
+        <div class="cadre_valeurs-img">
+            <img src="{{ asset('img/deco-fond-texte.jpg') }}" alt="Les valeurs de l'ADVE">
+        </div>
+    </section>
+    <section class="container-diagonal-box diagonal-margin">
+        <div class="diagonal-box container-large gap-80">
+            <h2>Nos séjours coup de coeur</h2>
+            <div class="container-card">
+                {% for sejour in sejours| slice(0,3) %}
+                <div class="card">
+                    <a href="{{ path('main_vacance_view',{'slug':sejour.slug}) }}">
+                        <img src="{{ asset('uploads/'~sejour.photoEnAvant) }}" alt="Photo du séjour">
+                        <div class="card-text">
+                            <div class="card-bloc-title">
+                                <h3>{{ sejour.titre }}</h3>
+                                <p>{{ sejour.centre}} | {{ sejour.centre.localisation }}</p>
+                            </div>
+                            <div>
+                                <div class="card-bloc-item">
+                                    <p>Activités</p>
+                                    <p>{{ sejour.activite.name }}</p>
+                                </div>
+                                <div class="card-bloc-item">
+                                    <p>Âge</p>
+                                    <p>{{ sejour.ageMin}} à {{ sejour.ageMax}} ans</p>
+                                </div>
+                                <div class="card-bloc-item">
+                                    <p>Durée du séjour</p>
+                                    {% for duree in sejour.dureeSejour %}
+                                        <p>{{ duree.name }}/</p>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            <div class="card-bloc-price">
+                                <p>À partir de</p>
+                                <p>{{ sejour.prixMin }}€</p>
+                                <p>/enfant</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+
+            </div>
+            <div>
+                <a class="button-primary" href="{{ path('main_vacances') }}">Voir tous les séjours</a>
+            </div>
+        </div>
+    </section>
+    <section class="container-large section-margin">
+        <h2>Vos avis sur nos séjours</h2>
+        <div class="bloc-opinion carousel">
+            <div>
+                <p>Auto Flow makes it easy to draw stunning flows for creating WireFrames, UserFlows, FlowCharts and
+                    Design guides. With AutoFlow get closer to your UserFlows, FlowCharts and Design guides. With
+                    AutoFlow get closer to your</p>
+                <p>Joseph Jackson</p>
+                <p>Parent</p>
+            </div>
+            <div>
+                <p>Auto Flow makes it easy to draw stunning flows for creating WireFrames, UserFlows, FlowCharts and
+                    Design guides. With AutoFlow get closer to your UserFlows, FlowCharts and Design guides. With
+                    AutoFlow get closer to your</p>
+                <p>Joseph Jackson</p>
+                <p>Parent</p>
+            </div>
+            <div>
+                <p>Auto Flow makes it easy to draw stunning flows for creating WireFrames, UserFlows, FlowCharts and
+                    Design guides. With AutoFlow get closer to your UserFlows, FlowCharts and Design guides. With
+                    AutoFlow get closer to your</p>
+                <p>Joseph Jackson</p>
+                <p>Parent</p>
+            </div>
+            <div>
+                <p>Auto Flow makes it easy to draw stunning flows for creating WireFrames, UserFlows, FlowCharts and
+                    Design guides. With AutoFlow get closer to your UserFlows, FlowCharts and Design guides. With
+                    AutoFlow get closer to your</p>
+                <p>Joseph Jackson</p>
+                <p>Parent</p>
+            </div>
+            <div>
+                <p>Auto Flow makes it easy to draw stunning flows for creating WireFrames, UserFlows, FlowCharts and
+                    Design guides. With AutoFlow get closer to your UserFlows, FlowCharts and Design guides. With
+                    AutoFlow get closer to your</p>
+                <p>Joseph Jackson</p>
+                <p>Parent</p>
+            </div>
+        </div>
+        <div class="prevandnext">
+            <div class="prev">
+                <img src="{{ asset('img/chevron.svg') }}" alt="Flèche vers la gauche">
+            </div>
+            <div class="next">
+                <img src="{{ asset('img/chevron.svg') }}" alt="Flèche vers la droite">
+            </div>
+        </div>
+    </section>
+    <section class="container-diagonal-box diagonal-margin">
+        <div class="diagonal-box container-large gap-80">
+            <h2>Nos actualités</h2>
+            <div class="container-card">
+                {% for article in articles %}
+                <div class="card">
+                    <img src="{{ asset('/uploads/'~article.imageEnAvant) }}" alt="Photo de l'actu">
+                    <div class="card-text">
+                        <div class="card-bloc-title">
+                            <h3>{{ article.title }}</h3>
+                            <p>publié le:{{ article.createdDate|date('d-m-Y') }}</p>
+                        </div>
+                        <p>{{ article.content |slice(0,200) |striptags|raw }}...</p>
+                        <div>
+                            <a href="{{ path('main_actu_view',{'slug':article.slug}) }}">Lire la suite</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </section>
+    <section class="section-partenaire container-large">
+        <img src="{{ asset('img/logo-partenaire.svg') }}" alt="Partenaire n°1">
+        <img src="{{ asset('img/logo-partenaire.svg') }}" alt="Partenaire n°1">
+        <img src="{{ asset('img/logo-partenaire.svg') }}" alt="Partenaire n°1">
+        <img src="{{ asset('img/logo-partenaire.svg') }}" alt="Partenaire n°1">
+        <img src="{{ asset('img/logo-partenaire.svg') }}" alt="Partenaire n°1">
+        <img src="{{ asset('img/logo-partenaire.svg') }}" alt="Partenaire n°1">
+    </section>
+    <div class="separator-index container-large"></div>
+    <section class="container-check container-large">
+        <div class="bloc-check">
+            <img src="{{ asset('img/check.svg') }}" alt="Séjours vérifiés">
+            <div>
+                <h3>Séjours vérifiés</h3>
+                <p>Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit,</p>
+            </div>
+        </div>
+        <div class="bloc-check">
+            <img src="{{ asset('img/pay.svg') }}" alt="Paiement sécurisé">
+            <div>
+                <h3>Paiement sécurisé</h3>
+                <p>Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit,</p>
+            </div>
+        </div>
+        <div class="bloc-check">
+            <img src="{{ asset('img/stop.svg') }}" alt="Annulation">
+            <div>
+                <h3>Annulation</h3>
+                <p>Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit,</p>
+            </div>
+        </div>
+    </section>
+    <section class="container-galerie">
+        <img src="{{ asset('img/img-gallerie.jpg') }}" alt="Photo galerie">
+        <img src="{{ asset('img/img-gallerie.jpg') }}" alt="Photo galerie">
+        <img src="{{ asset('img/img-gallerie.jpg') }}" alt="Photo galerie">
+        <img src="{{ asset('img/img-gallerie.jpg') }}" alt="Photo galerie">
+        <img src="{{ asset('img/img-gallerie.jpg') }}" alt="Photo galerie">
+        <img src="{{ asset('img/img-gallerie.jpg') }}" alt="Photo galerie">
+    </section>
+    <div class="separator"></div>
+
+    {{ include('_include/_mainFooter.html.twig') }}
+
+    <script type="text/javascript" src="{{ asset('js/slick.min.js') }}"></script>
+    <script src="{{ asset('js/carousel.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/maincss/slick.css') }}"/>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#show').click(function () {
+                $('.form-show').slideToggle("slide");
+            });
+        });
+    </script>
+
+
+{% endblock %}

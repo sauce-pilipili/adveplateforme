@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="972" height="981.881" viewBox="0 0 972 981.881">
+  <defs>
+    <pattern id="pattern" width="1" height="1" viewBox="224.131 426.523 451.955 456.55">
+      <image preserveAspectRatio="xMidYMid slice" width="972" height="1374.823" xlink:href="img/test.jpg"/>
+    </pattern>
+  </defs>
+  <path id="Soustraction_19"  d="M513.394,1044.818h0V320.148L1251.927,62.936l14.718.78,218.588,642.106.16.471-972,338.524Z" transform="translate(-513.394 -62.936)" fill="url(#pattern)"/>
+</svg>

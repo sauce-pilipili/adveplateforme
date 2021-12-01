@@ -1,0 +1,32 @@
+.button-2 {
+    display: inline-flex;
+    align-items: center;
+    padding: 22px 50px;
+    border: 1px solid var(--color-white);
+    color: var(--color-white);
+    font-family: var(--font-text);
+    font-weight: bold;
+}
+
+.button-2-black {
+    display: inline-flex;
+    align-items: center;
+    padding: 22px 50px;
+    border: 1px solid #000;
+    color: #000;
+    font-family: var(--font-text);
+    font-weight: bold;
+    font-size: var(--size-url);
+}
+
+.button-1 {
+    display: inline-flex;
+    align-items: center;
+    padding: 22px 50px;
+    border: 1px solid var(--color-white);
+    background-color: var(--main-color);
+    color: var(--color-white);
+    font-family: var(--font-text);
+    font-weight: bold;
+    border: 1px solid var(--main-color);
+}

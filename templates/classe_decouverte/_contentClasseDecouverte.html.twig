@@ -1,0 +1,12 @@
+{% for classe_decouverte in classe_decouvertes %}
+    <tr>
+        <td><a style="cursor:pointer " href="{{ path('classe_decouverte_edit', {'id': classe_decouverte.id}) }}">{{ classe_decouverte.titre }}</a></td>
+        <td>
+            {{ include('classe_decouverte/_delete_form.html.twig') }}
+        </td>
+    </tr>
+{% else %}
+    <tr>
+        <td colspan="15">Aucun résultat</td>
+    </tr>
+{% endfor %}

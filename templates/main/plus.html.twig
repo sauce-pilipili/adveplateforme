@@ -1,0 +1,96 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil ADVE{% endblock %}
+
+{% block body %}
+    {{ include('_include/_mainNavigation.html.twig') }}
+    <section class="container-xsmall gap-40">
+        <h1>Les plus de l'ADVE</h1>
+        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no</p>
+    </section>
+
+    <section class="container-more container-large">
+        <div class="row-1">
+            <div class="col-1">
+                <div class="title-item">
+                    <div>1</div>
+                    <h2>La bienveillance</h2>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no</p>
+            </div>
+            <div class="col-2">
+                <div class="title-item">
+                    <div>2</div>
+                    <h2>L'apprentissage</h2>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no</p>
+            </div>
+        </div>
+        <div class="row-2">
+            <div class="col-1">
+                <div class="title-item">
+                    <div>3</div>
+                    <h2>L'accompagnement</h2>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no</p>
+            </div>
+            <div class="col-2">
+                <div class="title-item">
+                    <div>4</div>
+                    <h2>Pas de sous-traitance</h2>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-plus-img">
+        <img src="{{ asset('img/les-plus.jpg') }}" alt="">
+    </section>
+
+    <section class="container-large margin-bottom-100 margin-top-100">
+        <div class="container">
+            <div class="col-1 card padding-60 gap-40">
+                <h3>Activités dominantes</h3>
+                <p>✓ Lorem ipsum dolor sit amet, consetetur sadipscing
+                    elitr, sed diam nonumy eirmod tempor invidunt ut
+                    labore et dolore magna aliquyam erat, sed diam
+                    voluptua. At vero eos et accusam et justo duo dolores et
+                    ea rebum.<br>
+                    ✓ Stet clita kasd gubergren, no sea takimata sanctus est
+                    Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
+                    amet, consetetur sadipscing elitr, sed diam nonumy
+                    eirmod tempor invidunt ut labore et dolore magna
+                    aliquyam erat, sed diam voluptua.<br>
+                    ✓ At vero eos et accusam et justo duo dolores et ea
+                    rebum. Stet clita kasd gubergren, no sea takimata
+                    sanctus est Lorem ipsum dolor sit amet
+                </p>
+            </div>
+            <div class="col-2 card padding-60 gap-40">
+                <h3>Activités annexes</h3>
+                <p>✓ Lorem ipsum dolor sit amet, consetetur sadipscing
+                    elitr, sed diam nonumy eirmod tempor invidunt ut
+                    labore et dolore magna aliquyam erat, sed diam
+                    voluptua. At vero eos et accusam et justo duo dolores et
+                    ea rebum.<br>
+                    ✓ Stet clita kasd gubergren, no sea takimata sanctus est
+                    Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
+                    amet, consetetur sadipscing elitr, sed diam nonumy
+                    eirmod tempor invidunt ut labore et dolore magna
+                    aliquyam erat, sed diam voluptua.<br>
+                    ✓ At vero eos et accusam et justo duo dolores et ea
+                    rebum. Stet clita kasd gubergren, no sea takimata
+                    sanctus est Lorem ipsum dolor sit amet
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="separator"></div>
+
+
+    {{ include('_include/_mainFooter.html.twig') }}
+
+{% endblock %}
